@@ -1,0 +1,14 @@
+<plugin xmlns="http://xtrip.gridnine.com/spf" id="com.gridnine.spf.test.plugin1">
+    <dependencies>
+        <lib-dependency group="org.apache.poi" name="poi" version="4+"/>
+        <lib-dependency group="org.apache.poi" name="poi-ooxml" version="4+"/>
+    </dependencies>
+    <extension-point id="extension-point-1">
+        <parameter-def id="class" multiplicity="one-or-more"/>
+        <parameter-def id="location"/>
+    </extension-point>
+    <extension point-id="extension-point-1">
+        <parameter id="class" value="cls1"/>
+        <parameter id="location" value="loc1"/>
+    </extension>
+</plugin>

@@ -1,0 +1,61 @@
+<schema targetNamespace="http://xtrip.gridnine.com/spf"
+        elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:tns="http://xtrip.gridnine.com/spf">
+    <element name="plugin">
+        <complexType>
+            <sequence>
+                <element name="dependencies" type="tns:dependencies" minOccurs="0" maxOccurs="1"/>
+                <element name="extension-point" type="tns:extensionPoint" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="extension" type="tns:extension" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="id" type="string" use="required"/>
+        </complexType>
+    </element>
+    <complexType name="dependencies">
+        <sequence>
+            <choice maxOccurs="unbounded">
+                <element name="plugin-dependency" maxOccurs="unbounded">
+                    <complexType>
+                        <attribute name="plugin-id" use="required" type="string"/>
+                    </complexType>
+                </element>
+                <element name="lib-dependency" maxOccurs="unbounded">
+                    <complexType>
+                        <attribute name="group" use="required" type="string"/>
+                        <attribute name="name" use="required" type="string"/>
+                        <attribute name="version" use="required" type="string"/>
+                    </complexType>
+                </element>
+            </choice>
+        </sequence>
+    </complexType>
+    <complexType name="extension">
+        <sequence>
+            <element name="parameter" maxOccurs="unbounded">
+                <complexType>
+                    <attribute name="id" use="required" type="string"/>
+                    <attribute name="value" type="string"/>
+                </complexType>
+            </element>
+        </sequence>
+        <attribute name="point-id" use="required"/>
+    </complexType>
+    <complexType name="extensionPoint">
+        <sequence>
+            <element name="parameter-def" maxOccurs="unbounded">
+                <complexType>
+                    <attribute name="id" use="required" type="string"/>
+                    <attribute name="multiplicity" type="tns:multiplicityType" default="one"/>
+                </complexType>
+            </element>
+        </sequence>
+        <attribute name="id" use="required"/>
+    </complexType>
+
+    <simpleType name="multiplicityType">
+        <restriction base="string">
+            <enumeration value="one-or-more"/>
+            <enumeration value="one"/>
+        </restriction>
+    </simpleType>
+</schema>
