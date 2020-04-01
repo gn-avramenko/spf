@@ -45,7 +45,7 @@ final class SpfPluginFileParser {
                                 break;
                             }
                             case "extension": {
-                                result.getExtensions().add(parseExtension(child));
+                                result.getExtensions().add(parseExtension(child, result.getId()));
                                 break;
                             }
                             case "extensionPoint": {
@@ -92,9 +92,10 @@ final class SpfPluginFileParser {
         return result;
     }
 
-    private static SpfExtension parseExtension(Node extensionNode) {
+    private static SpfExtension parseExtension(Node extensionNode, String pluginId) {
         SpfExtension result = new SpfExtension();
         result.setPointId(extensionNode.getAttributes().getNamedItem("point-id").getNodeValue());
+        result.setPluginId(pluginId);
         NodeList extensionChildrenList = extensionNode.getChildNodes();
         for (int m = 0; m < extensionChildrenList.getLength(); m++) {
             Node childItem = extensionChildrenList.item(m);

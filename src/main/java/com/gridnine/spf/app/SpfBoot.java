@@ -10,7 +10,7 @@ import java.net.InetAddress;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.nio.channels.FileLock;
-import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -21,7 +21,7 @@ public class SpfBoot {
         Properties properties = new Properties();
         if (configFile.exists()) {
             try (InputStream is = new FileInputStream(configFile)) {
-                properties.load(new InputStreamReader(is, Charset.forName("utf-8")));
+                properties.load(new InputStreamReader(is, StandardCharsets.UTF_8));
             }
         }
         String mode = System.getProperty("spf.mode");
@@ -45,7 +45,7 @@ public class SpfBoot {
         File externalsFile = new File(libFolder, "externals.txt");
         if (externalsFile.exists()) {
             try (InputStream is = new FileInputStream(externalsFile)) {
-                BufferedReader reader = new BufferedReader(new InputStreamReader(is, Charset.forName("utf-8")));
+                BufferedReader reader = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
                 String line = reader.readLine();
                 while (line != null) {
                     urls.add(new File(line).toURI().toURL());

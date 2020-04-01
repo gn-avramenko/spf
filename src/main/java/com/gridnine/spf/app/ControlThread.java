@@ -85,8 +85,8 @@ final class ControlThread extends Thread {
         });
     }
 
-    static boolean stopRunningApplication(InetAddress host, int port) {
-        return makeRequest(host, port, new RequestHandler() {
+    static void stopRunningApplication(InetAddress host, int port) {
+        makeRequest(host, port, new RequestHandler() {
             @Override
             public byte[] getRequest() {
                 return "STOP".getBytes();

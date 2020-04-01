@@ -7,6 +7,7 @@ package com.gridnine.spf.meta;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class SpfExtensionPoint {
     private String id;
 

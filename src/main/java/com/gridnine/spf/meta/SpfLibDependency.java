@@ -4,6 +4,7 @@
  *****************************************************************/
 package com.gridnine.spf.meta;
 
+@SuppressWarnings("unused")
 public class SpfLibDependency {
     private String group;
 

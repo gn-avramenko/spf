@@ -4,6 +4,7 @@
  *****************************************************************/
 package com.gridnine.spf.meta;
 
+@SuppressWarnings("unused")
 public class SpfExtensionPointParameterDef {
     private String id;
     private SpfParameterMultiplicity multiplicity;

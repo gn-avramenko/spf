@@ -6,6 +6,8 @@ package com.gridnine.spf.meta;
 
 import java.net.URL;
 import java.util.*;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class SpfPluginsRegistry {
 
@@ -22,8 +24,12 @@ public class SpfPluginsRegistry {
     }
 
     public void initRegistry(Collection<URL> descriptions) {
+        initRegistry(descriptions, it -> true);
+    }
+
+    public void initRegistry(Collection<URL> descriptions, Predicate<SpfPlugin> filter) {
         plugins.clear();
-        descriptions.forEach(d -> plugins.add(SpfPluginFileParser.parse(d)));
+        plugins.addAll(descriptions.stream().map(SpfPluginFileParser::parse).filter(filter).collect(Collectors.toList()));
         plugins.sort((plug1, plug2) -> {
                 if(isDependent(plug1, plug2)){
                     return 1;
