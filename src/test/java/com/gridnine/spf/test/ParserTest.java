@@ -6,6 +6,7 @@ package com.gridnine.spf.test;
 
 import com.gridnine.spf.meta.SpfExtension;
 import com.gridnine.spf.meta.SpfExtensionParameter;
+import com.gridnine.spf.meta.SpfPlugin;
 import com.gridnine.spf.meta.SpfPluginsRegistry;
 import org.junit.Assert;
 import org.junit.Test;
@@ -57,7 +58,10 @@ public class ParserTest {
             }
 
         }
-
+        SpfPlugin spfPlugin = registry.getPlugins().get(0);
+        Assert.assertEquals(1, spfPlugin.getParameters().size());
+        Assert.assertEquals("type", spfPlugin.getParameters().get(0).getId());
+        Assert.assertEquals("SERVER", spfPlugin.getParameters().get(0).getValue());
     }
 }
 

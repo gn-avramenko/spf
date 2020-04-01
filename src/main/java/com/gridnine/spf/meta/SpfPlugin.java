@@ -8,6 +8,8 @@ public class SpfPlugin {
 
     private final List<SpfLibDependency> libsDependencies = new ArrayList<>();
 
+    private final List<SpfPluginParameter> parameters = new ArrayList<>();
+
     private final List<SpfPluginDependency> pluginsDependencies = new ArrayList<>();
 
     private final List<SpfExtension> extensions = new ArrayList<>();
@@ -20,6 +22,11 @@ public class SpfPlugin {
 
     void setId(String id) {
         this.id = id;
+    }
+
+
+    public List<SpfPluginParameter> getParameters() {
+        return parameters;
     }
 
     public List<SpfExtension> getExtensions() {

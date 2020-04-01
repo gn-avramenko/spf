@@ -1,4 +1,5 @@
 <plugin xmlns="http://xtrip.gridnine.com/spf" id="com.gridnine.spf.test.plugin1">
+    <parameter id="type" value="SERVER"/>
     <dependencies>
         <lib-dependency group="org.apache.poi" name="poi" version="4+"/>
         <lib-dependency group="org.apache.poi" name="poi-ooxml" version="4+"/>

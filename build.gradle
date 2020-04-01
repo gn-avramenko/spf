@@ -14,3 +14,12 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
+
+
+task sources(type:org.gradle.jvm.tasks.Jar){
+    from sourceSets.main.allSource
+    archiveName = 'spf-1.0-sources.jar'
+    destinationDir = file("${buildDir}/libs")
+}
+
+task dist(group: "build", dependsOn:[jar, sources])

@@ -52,6 +52,10 @@ final class SpfPluginFileParser {
                                 result.getExtensionPoints().add(parseExtensionPoint(child));
                                 break;
                             }
+                            case "parameter": {
+                                result.getParameters().add(parseParameter(child));
+                                break;
+                            }
                         }
                     }
                 }
@@ -107,7 +111,13 @@ final class SpfPluginFileParser {
         }
         return result;
     }
-
+    private static SpfPluginParameter parseParameter(Node libDependency) {
+        SpfPluginParameter result = new SpfPluginParameter();
+        NamedNodeMap attrs = libDependency.getAttributes();
+        result.setId(attrs.getNamedItem("id").getNodeValue());
+        result.setValue(attrs.getNamedItem("value").getNodeValue());
+        return result;
+    }
     private static SpfLibDependency parseLibDependency(Node libDependency) {
         SpfLibDependency result = new SpfLibDependency();
         NamedNodeMap attrs = libDependency.getAttributes();
