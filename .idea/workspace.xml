@@ -514,6 +514,12 @@
     <MESSAGE value="first commit" />
     <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
+  <component name="WindowStateProjectService">
+    <state x="594" y="90" key="CommitChangelistDialog2" timestamp="1585750956519">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="594" y="90" key="CommitChangelistDialog2/0.0.1920.1044@0.0.1920.1044" timestamp="1585750956519" />
+  </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
