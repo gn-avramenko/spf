@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2783f3ed-2f8e-41e0-9e0b-9a6aae6ac655" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/spf-git.iml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gridnine/spf/app/ControlThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gridnine/spf/app/ControlThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gridnine/spf/app/SpfBoot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gridnine/spf/app/SpfBoot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gridnine/spf/meta/SpfExtension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gridnine/spf/meta/SpfExtension.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gridnine/spf/meta/SpfExtensionPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gridnine/spf/meta/SpfExtensionPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gridnine/spf/meta/SpfExtensionPointParameterDef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gridnine/spf/meta/SpfExtensionPointParameterDef.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gridnine/spf/meta/SpfLibDependency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gridnine/spf/meta/SpfLibDependency.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gridnine/spf/meta/SpfPluginFileParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gridnine/spf/meta/SpfPluginFileParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gridnine/spf/meta/SpfPluginsRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gridnine/spf/meta/SpfPluginsRegistry.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,10 +83,10 @@
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
@@ -110,7 +103,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.spf-git [dist]">
+  <component name="RunManager" selected="Gradle.spf-git [jar]">
     <configuration name="ParserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -252,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585750962923</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="first commit">
+      <created>1585756515975</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1585756515975</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -262,34 +262,46 @@
     <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="594" y="90" key="CommitChangelistDialog2" timestamp="1585750962877">
+    <state x="767" y="234" key="#com.intellij.ide.util.MemberChooser" timestamp="1586363770324">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="594" y="90" key="CommitChangelistDialog2/0.0.1920.1044@0.0.1920.1044" timestamp="1585750962877" />
-    <state width="1874" height="272" key="GridCell.Tab.0.bottom" timestamp="1585756512255">
+    <state x="767" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1044@0.0.1920.1044" timestamp="1586363770324" />
+    <state x="594" y="90" key="CommitChangelistDialog2" timestamp="1585756515882">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1874" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1044@0.0.1920.1044" timestamp="1585756512255" />
-    <state width="1874" height="272" key="GridCell.Tab.0.center" timestamp="1585756512254">
+    <state x="594" y="90" key="CommitChangelistDialog2/0.0.1920.1044@0.0.1920.1044" timestamp="1585756515882" />
+    <state width="1874" height="272" key="GridCell.Tab.0.bottom" timestamp="1586522159911">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1874" height="272" key="GridCell.Tab.0.center/0.0.1920.1044@0.0.1920.1044" timestamp="1585756512254" />
-    <state width="1874" height="272" key="GridCell.Tab.0.left" timestamp="1585756512253">
+    <state width="1874" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1044@0.0.1920.1044" timestamp="1586522159911" />
+    <state width="1874" height="272" key="GridCell.Tab.0.center" timestamp="1586522159909">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1874" height="272" key="GridCell.Tab.0.left/0.0.1920.1044@0.0.1920.1044" timestamp="1585756512253" />
-    <state width="1874" height="272" key="GridCell.Tab.0.right" timestamp="1585756512254">
+    <state width="1874" height="272" key="GridCell.Tab.0.center/0.0.1920.1044@0.0.1920.1044" timestamp="1586522159909" />
+    <state width="1874" height="272" key="GridCell.Tab.0.left" timestamp="1586522159908">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1874" height="272" key="GridCell.Tab.0.right/0.0.1920.1044@0.0.1920.1044" timestamp="1585756512254" />
+    <state width="1874" height="272" key="GridCell.Tab.0.left/0.0.1920.1044@0.0.1920.1044" timestamp="1586522159908" />
+    <state width="1874" height="272" key="GridCell.Tab.0.right" timestamp="1586522159910">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1874" height="272" key="GridCell.Tab.0.right/0.0.1920.1044@0.0.1920.1044" timestamp="1586522159910" />
     <state x="763" y="208" key="RollbackChangesDialog" timestamp="1585751845299">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="763" y="208" key="RollbackChangesDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1585751845299" />
-    <state x="554" y="251" key="Vcs.Push.Dialog.v2" timestamp="1585750972452">
+    <state x="689" y="252" width="564" height="524" key="StructurePopup" timestamp="1586363052773">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="554" y="251" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1585750972452" />
+    <state x="689" y="252" width="564" height="524" key="StructurePopup/0.0.1920.1044@0.0.1920.1044" timestamp="1586363052773" />
+    <state x="554" y="251" key="Vcs.Push.Dialog.v2" timestamp="1585756525365">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="554" y="251" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1585756525365" />
+    <state x="623" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1586362444256">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="623" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1044@0.0.1920.1044" timestamp="1586362444256" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">

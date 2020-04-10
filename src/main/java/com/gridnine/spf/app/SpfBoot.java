@@ -9,6 +9,7 @@ import java.io.*;
 import java.net.InetAddress;
 import java.net.URL;
 import java.net.URLClassLoader;
+import java.net.URLStreamHandlerFactory;
 import java.nio.channels.FileLock;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -17,13 +18,7 @@ import java.util.Properties;
 
 public class SpfBoot {
     public static void main(String[] args) throws Exception {
-        File configFile = new File(System.getProperty("spf.config", "config/boot.properties"));
-        Properties properties = new Properties();
-        if (configFile.exists()) {
-            try (InputStream is = new FileInputStream(configFile)) {
-                properties.load(new InputStreamReader(is, StandardCharsets.UTF_8));
-            }
-        }
+        Properties properties = initProperties();
         String mode = System.getProperty("spf.mode");
         int port = Integer.parseInt(properties.getProperty("spf.port", "21566"));
         InetAddress address = InetAddress.getByName("localhost");
@@ -62,15 +57,15 @@ public class SpfBoot {
                 }
             }
         }
-
-        ClassLoader cl = new URLClassLoader(urls.toArray(new URL[0]), SpfBoot.class.getClassLoader());
+        ClassLoader cl = new SpfClassLoader(urls.toArray(new URL[0]), SpfBoot.class.getClassLoader());
         SpfApplication app = (SpfApplication) cl.loadClass(applicationClass).getConstructor().newInstance();
+
         try {
             app.start(properties);
         }catch (Exception e){
-            e.printStackTrace();
             app.stop();
-            return;
+            ControlThread.releaseLock(fileLock);
+            throw e;
         }
         if ("start".equals(mode)) {
             System.out.println("Press 'q' key to exit.");
@@ -99,23 +94,67 @@ public class SpfBoot {
 
     }
 
+    private static Properties initProperties() throws IOException {
+        File configFile = new File(System.getProperty("spf.config", "config/boot.properties"));
+        Properties properties = new Properties();
+        if (configFile.exists()) {
+            try (InputStream is = new FileInputStream(configFile)) {
+                properties.load(new InputStreamReader(is, StandardCharsets.UTF_8));
+            }
+        }
+        return properties;
+    }
+
+    @SuppressWarnings("unused")
+    public static boolean isApplicationRunning() throws Exception {
+        Properties properties = initProperties();
+        int port = Integer.parseInt(properties.getProperty("spf.port", "21566"));
+        InetAddress address = InetAddress.getByName("localhost");
+        return ControlThread.isApplicationRunning(address, port);
+    }
+
     private static FileLock acquireLock(String tempDirectory) throws Exception {
         File tempDir = new File(tempDirectory);
         if (!tempDir.exists() && !tempDir.mkdirs()) {
             throw new Exception("unable to create dir " + tempDir);
         }
         File file = new File(tempDir, ".lock");
+        FileLock result = null;
         try {
             //noinspection ResultOfMethodCallIgnored
             file.createNewFile();
             file.deleteOnExit();
+            result = new RandomAccessFile(file, "rwd").getChannel().tryLock();
 
-
-            return new RandomAccessFile(file, "rwd").getChannel().tryLock();
         } catch (Exception e) {
+            throw new Exception(
+                    "Another instance of the application is running. Please terminate and try again.", e);
+        }
+        if(result == null){
             throw new Exception(
                     "Another instance of the application is running. Please terminate and try again.");
         }
+        return result;
     }
 
+    static class SpfClassLoader extends URLClassLoader{
+
+        private final URL[] urls;
+
+        public SpfClassLoader(URL[] urls, ClassLoader parent) {
+            super(urls, parent);
+            this.urls = urls;
+        }
+
+        public SpfClassLoader(URL[] urls) {
+            super(urls);
+            this.urls = urls;
+        }
+
+        public SpfClassLoader(URL[] urls, ClassLoader parent, URLStreamHandlerFactory factory) {
+            super(urls, parent, factory);
+            this.urls = urls;
+        }
+
+    }
 }
