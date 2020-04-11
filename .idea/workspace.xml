@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="2783f3ed-2f8e-41e0-9e0b-9a6aae6ac655" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="2783f3ed-2f8e-41e0-9e0b-9a6aae6ac655" name="Default Changelist" comment="improvements">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gridnine/spf/app/SpfBoot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gridnine/spf/app/SpfBoot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,15 +75,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>System.out.println</find>
-      <find>lock</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>println</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -88,7 +94,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../spf-updater" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -252,56 +258,79 @@
       <option name="project" value="LOCAL" />
       <updated>1585756515975</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="improvements">
+      <created>1586540440222</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1586540440222</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="improvements" />
+    <option name="LAST_COMMIT_MESSAGE" value="improvements" />
   </component>
   <component name="WindowStateProjectService">
     <state x="767" y="234" key="#com.intellij.ide.util.MemberChooser" timestamp="1586363770324">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="767" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1044@0.0.1920.1044" timestamp="1586363770324" />
-    <state x="594" y="90" key="CommitChangelistDialog2" timestamp="1585756515882">
+    <state x="594" y="90" key="CommitChangelistDialog2" timestamp="1586542630729">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="594" y="90" key="CommitChangelistDialog2/0.0.1920.1044@0.0.1920.1044" timestamp="1585756515882" />
-    <state width="1874" height="272" key="GridCell.Tab.0.bottom" timestamp="1586522159911">
+    <state x="594" y="90" key="CommitChangelistDialog2/0.0.1920.1044@0.0.1920.1044" timestamp="1586542630729" />
+    <state x="741" y="259" key="FileChooserDialogImpl" timestamp="1586541512068">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1874" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1044@0.0.1920.1044" timestamp="1586522159911" />
-    <state width="1874" height="272" key="GridCell.Tab.0.center" timestamp="1586522159909">
+    <state x="741" y="259" key="FileChooserDialogImpl/0.0.1920.1044@0.0.1920.1044" timestamp="1586541512068" />
+    <state width="1874" height="272" key="GridCell.Tab.0.bottom" timestamp="1586540478827">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1874" height="272" key="GridCell.Tab.0.center/0.0.1920.1044@0.0.1920.1044" timestamp="1586522159909" />
-    <state width="1874" height="272" key="GridCell.Tab.0.left" timestamp="1586522159908">
+    <state width="1874" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1044@0.0.1920.1044" timestamp="1586540478827" />
+    <state width="1874" height="272" key="GridCell.Tab.0.center" timestamp="1586540478826">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1874" height="272" key="GridCell.Tab.0.left/0.0.1920.1044@0.0.1920.1044" timestamp="1586522159908" />
-    <state width="1874" height="272" key="GridCell.Tab.0.right" timestamp="1586522159910">
+    <state width="1874" height="272" key="GridCell.Tab.0.center/0.0.1920.1044@0.0.1920.1044" timestamp="1586540478826" />
+    <state width="1874" height="272" key="GridCell.Tab.0.left" timestamp="1586540478825">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1874" height="272" key="GridCell.Tab.0.right/0.0.1920.1044@0.0.1920.1044" timestamp="1586522159910" />
+    <state width="1874" height="272" key="GridCell.Tab.0.left/0.0.1920.1044@0.0.1920.1044" timestamp="1586540478825" />
+    <state width="1874" height="272" key="GridCell.Tab.0.right" timestamp="1586540478827">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="1874" height="272" key="GridCell.Tab.0.right/0.0.1920.1044@0.0.1920.1044" timestamp="1586540478827" />
     <state x="763" y="208" key="RollbackChangesDialog" timestamp="1585751845299">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="763" y="208" key="RollbackChangesDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1585751845299" />
-    <state x="689" y="252" width="564" height="524" key="StructurePopup" timestamp="1586363052773">
+    <state x="689" y="252" width="564" height="524" key="StructurePopup" timestamp="1586629354225">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="689" y="252" width="564" height="524" key="StructurePopup/0.0.1920.1044@0.0.1920.1044" timestamp="1586363052773" />
-    <state x="554" y="251" key="Vcs.Push.Dialog.v2" timestamp="1585756525365">
+    <state x="689" y="252" width="564" height="524" key="StructurePopup/0.0.1920.1044@0.0.1920.1044" timestamp="1586629354225" />
+    <state x="554" y="251" key="Vcs.Push.Dialog.v2" timestamp="1586542618188">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="554" y="251" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1585756525365" />
-    <state x="623" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1586362444256">
+    <state x="554" y="251" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1586542618188" />
+    <state x="623" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1586629327137">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="623" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1044@0.0.1920.1044" timestamp="1586362444256" />
+    <state x="623" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1044@0.0.1920.1044" timestamp="1586629327137" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">

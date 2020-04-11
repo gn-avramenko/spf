@@ -9,7 +9,6 @@ import java.io.*;
 import java.net.InetAddress;
 import java.net.URL;
 import java.net.URLClassLoader;
-import java.net.URLStreamHandlerFactory;
 import java.nio.channels.FileLock;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -119,7 +118,7 @@ public class SpfBoot {
             throw new Exception("unable to create dir " + tempDir);
         }
         File file = new File(tempDir, ".lock");
-        FileLock result = null;
+        FileLock result;
         try {
             //noinspection ResultOfMethodCallIgnored
             file.createNewFile();
@@ -139,22 +138,13 @@ public class SpfBoot {
 
     static class SpfClassLoader extends URLClassLoader{
 
-        private final URL[] urls;
 
         public SpfClassLoader(URL[] urls, ClassLoader parent) {
             super(urls, parent);
-            this.urls = urls;
         }
 
-        public SpfClassLoader(URL[] urls) {
-            super(urls);
-            this.urls = urls;
-        }
-
-        public SpfClassLoader(URL[] urls, ClassLoader parent, URLStreamHandlerFactory factory) {
-            super(urls, parent, factory);
-            this.urls = urls;
-        }
 
     }
+
+
 }
