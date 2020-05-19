@@ -35,6 +35,7 @@ public class SpfBoot {
         }
         String tempDirectory = properties.getProperty("spf.tempDirectory", System.getProperty("spf.tempDirectory", "temp"));
         FileLock fileLock = acquireLock(tempDirectory);
+        File lockFile = new File(tempDirectory, "lock.tmp");
         List<URL> urls = new ArrayList<>();
         File externalsFile = new File(libFolder, "externals.txt");
         if (externalsFile.exists()) {
@@ -63,7 +64,7 @@ public class SpfBoot {
             app.start(properties);
         }catch (Exception e){
             app.stop();
-            ControlThread.releaseLock(fileLock);
+            ControlThread.releaseLock(fileLock, lockFile);
             throw e;
         }
         if ("start".equals(mode)) {
@@ -77,16 +78,16 @@ public class SpfBoot {
                 }
             } while ('q' != (char) c && 'Q' != (char) c);
             app.stop();
-            ControlThread.releaseLock(fileLock);
+            ControlThread.releaseLock(fileLock, lockFile);
             return;
         }
         if (ControlThread.isApplicationRunning(address, port)) {
             System.out.println("Application already running.");
-            ControlThread.releaseLock(fileLock);
+            ControlThread.releaseLock(fileLock, lockFile);
             return;
         }
 
-        ControlThread controlThread = new ControlThread(address, port, app, fileLock);
+        ControlThread controlThread = new ControlThread(address, port, app, fileLock, lockFile);
         controlThread.start();
         System.out.println("application started in BACKGROUND mode");
 
@@ -117,11 +118,15 @@ public class SpfBoot {
         if (!tempDir.exists() && !tempDir.mkdirs()) {
             throw new Exception("unable to create dir " + tempDir);
         }
-        File file = new File(tempDir, ".lock");
+        File file = new File(tempDir, "lock.tmp");
         FileLock result;
         try {
-            //noinspection ResultOfMethodCallIgnored
-            file.createNewFile();
+            if(file.exists() && !file.delete()){
+                throw new Exception("unable to delete temp file");
+            }
+            if(!file.createNewFile()){
+                throw new Exception("unable to create temp file");
+            }
             file.deleteOnExit();
             result = new RandomAccessFile(file, "rwd").getChannel().tryLock();
 

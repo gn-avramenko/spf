@@ -5,6 +5,7 @@
 
 package com.gridnine.spf.app;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -15,10 +16,11 @@ import java.nio.channels.FileLock;
 
 @SuppressWarnings("unused")
 final class ControlThread extends Thread {
-    private ServerSocket serverSocket;
+    private final ServerSocket serverSocket;
     private boolean appRunning;
     private final SpfApplication app;
     private final FileLock lock;
+    private final File tempFile;
 
 
 
@@ -105,12 +107,13 @@ final class ControlThread extends Thread {
         });
     }
 
-    ControlThread(InetAddress host, int port, SpfApplication app, FileLock lock) throws Exception {
+    ControlThread(InetAddress host, int port, SpfApplication app, FileLock lock, File tempFile) throws Exception {
 
         this.serverSocket = new ServerSocket(port, 1, host);
         this.appRunning = true;
         this.app = app;
         this.lock = lock;
+        this.tempFile = tempFile;
         this.setName("spf-application-control-thread");
     }
 
@@ -143,7 +146,7 @@ final class ControlThread extends Thread {
                 this.stopApplication();
             }
             if(lock != null){
-                releaseLock(lock);
+                releaseLock(lock, tempFile);
             }
         }
 
@@ -249,13 +252,16 @@ final class ControlThread extends Thread {
     }
 
 
-    static void releaseLock(FileLock lock){
+    static void releaseLock(FileLock lock, File tempFile){
         if (lock != null) {
             try {
                 lock.release();
                 lock.channel().close();
-            } catch (IOException e) {
-                println("error releasing locck");
+                if(tempFile.exists() && !tempFile.delete()){
+                    throw new Exception("unable to delete temp file " + tempFile);
+                }
+            } catch (Exception e) {
+                println("error releasing lock");
                 e.printStackTrace();
             }
         }

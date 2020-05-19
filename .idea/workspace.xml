@@ -19,8 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2783f3ed-2f8e-41e0-9e0b-9a6aae6ac655" name="Default Changelist" comment="improvements">
+    <list default="true" id="2783f3ed-2f8e-41e0-9e0b-9a6aae6ac655" name="Default Changelist" comment="deployment functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gridnine/spf/app/ControlThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gridnine/spf/app/ControlThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gridnine/spf/app/SpfBoot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gridnine/spf/app/SpfBoot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,6 +62,17 @@
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="spf" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="spf" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
             </expand>
             <select />
           </tree_state>
@@ -94,7 +106,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../spf-updater" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -109,7 +121,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.spf-git [jar]">
+  <component name="RunManager" selected="Gradle.spf-git [dist]">
     <configuration name="ParserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -265,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586540440222</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="deployment functionality">
+      <created>1586629548619</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1586629548619</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -278,43 +297,45 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="first commit" />
     <MESSAGE value="improvements" />
-    <option name="LAST_COMMIT_MESSAGE" value="improvements" />
+    <MESSAGE value="deployment functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="deployment functionality" />
   </component>
   <component name="WindowStateProjectService">
     <state x="767" y="234" key="#com.intellij.ide.util.MemberChooser" timestamp="1586363770324">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="767" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1044@0.0.1920.1044" timestamp="1586363770324" />
-    <state x="594" y="90" key="CommitChangelistDialog2" timestamp="1586542630729">
+    <state x="594" y="90" key="CommitChangelistDialog2" timestamp="1586629559897">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="594" y="90" key="CommitChangelistDialog2/0.0.1920.1044@0.0.1920.1044" timestamp="1586542630729" />
+    <state x="594" y="90" key="CommitChangelistDialog2/0.0.1920.1044@0.0.1920.1044" timestamp="1586629559897" />
     <state x="741" y="259" key="FileChooserDialogImpl" timestamp="1586541512068">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="741" y="259" key="FileChooserDialogImpl/0.0.1920.1044@0.0.1920.1044" timestamp="1586541512068" />
-    <state width="1874" height="272" key="GridCell.Tab.0.bottom" timestamp="1586540478827">
+    <state width="937" height="272" key="GridCell.Tab.0.bottom" timestamp="1589823008470">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1874" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1044@0.0.1920.1044" timestamp="1586540478827" />
-    <state width="1874" height="272" key="GridCell.Tab.0.center" timestamp="1586540478826">
+    <state width="937" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1044@0.0.1920.1044" timestamp="1589823008470" />
+    <state width="937" height="272" key="GridCell.Tab.0.center" timestamp="1589823008470">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1874" height="272" key="GridCell.Tab.0.center/0.0.1920.1044@0.0.1920.1044" timestamp="1586540478826" />
-    <state width="1874" height="272" key="GridCell.Tab.0.left" timestamp="1586540478825">
+    <state width="937" height="272" key="GridCell.Tab.0.center/0.0.1920.1044@0.0.1920.1044" timestamp="1589823008470" />
+    <state width="937" height="272" key="GridCell.Tab.0.left" timestamp="1589823008469">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1874" height="272" key="GridCell.Tab.0.left/0.0.1920.1044@0.0.1920.1044" timestamp="1586540478825" />
-    <state width="1874" height="272" key="GridCell.Tab.0.right" timestamp="1586540478827">
+    <state width="937" height="272" key="GridCell.Tab.0.left/0.0.1920.1044@0.0.1920.1044" timestamp="1589823008469" />
+    <state width="937" height="272" key="GridCell.Tab.0.right" timestamp="1589823008470">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state width="1874" height="272" key="GridCell.Tab.0.right/0.0.1920.1044@0.0.1920.1044" timestamp="1586540478827" />
+    <state width="937" height="272" key="GridCell.Tab.0.right/0.0.1920.1044@0.0.1920.1044" timestamp="1589823008470" />
     <state x="763" y="208" key="RollbackChangesDialog" timestamp="1585751845299">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
@@ -323,10 +344,10 @@
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
     <state x="689" y="252" width="564" height="524" key="StructurePopup/0.0.1920.1044@0.0.1920.1044" timestamp="1586629354225" />
-    <state x="554" y="251" key="Vcs.Push.Dialog.v2" timestamp="1586542618188">
+    <state x="554" y="251" key="Vcs.Push.Dialog.v2" timestamp="1586629565847">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
-    <state x="554" y="251" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1586542618188" />
+    <state x="554" y="251" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1586629565847" />
     <state x="623" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1586629327137">
       <screen x="0" y="0" width="1920" height="1044" />
     </state>
