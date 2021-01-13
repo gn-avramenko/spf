@@ -22,6 +22,7 @@ public class SpfBoot {
         int port = Integer.parseInt(properties.getProperty("spf.port", "21566"));
         InetAddress address = InetAddress.getByName("localhost");
         if ("stop".equals(mode)) {
+            System.out.println("Stopping application");
             ControlThread.stopRunningApplication(address, port);
             return;
         }
@@ -37,7 +38,11 @@ public class SpfBoot {
         FileLock fileLock = acquireLock(tempDirectory);
         File lockFile = new File(tempDirectory, "lock.tmp");
         List<URL> urls = new ArrayList<>();
-        File externalsFile = new File(libFolder, "externals.txt");
+        String externalsFileName = System.getProperty("spf.externalsFileName");
+        if(externalsFileName == null){
+            externalsFileName = "externals.txt";
+        }
+        File externalsFile = new File(libFolder, externalsFileName);
         if (externalsFile.exists()) {
             try (InputStream is = new FileInputStream(externalsFile)) {
                 BufferedReader reader = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
