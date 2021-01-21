@@ -30,15 +30,16 @@ public class SpfPluginsRegistry {
     public void initRegistry(Collection<URL> descriptions, Predicate<SpfPlugin> filter) {
         plugins.clear();
         plugins.addAll(descriptions.stream().map(SpfPluginFileParser::parse).filter(filter).collect(Collectors.toList()));
-        plugins.sort((plug1, plug2) -> {
-                if(isDependent(plug1, plug2)){
-                    return 1;
-                } else if (isDependent(plug2, plug1)){
-                    return -1;
+        for (int i = 0; i < plugins.size(); i++) {
+            for (int j = i + 1; j < plugins.size(); j++) {
+                if (isDependent(plugins.get(i),
+                        plugins.get(j))) {
+                    Collections.swap(plugins, i, j);
+                    i = -1;
+                    break;
                 }
-                return 0;
-             }
-        );
+            }
+        }
         extensions.clear();
         plugins.forEach(pl ->
             pl.getExtensions().forEach(ext ->{
@@ -49,7 +50,17 @@ public class SpfPluginsRegistry {
     }
 
     private boolean isDependent(SpfPlugin plug1, SpfPlugin plug2) {
-        return plug1.getPluginsDependencies().stream().anyMatch(it -> plug2.getId().equals(it.getPluginId()));
+        Set<String> plug1Depths = new HashSet<>();
+        collectDependencies(plug1Depths, plug1);
+        return plug1Depths.contains(plug2.getId());
+    }
+
+    private void collectDependencies(Set<String> depth, SpfPlugin plug) {
+        plug.getPluginsDependencies().forEach(it ->{
+            if(depth.add(it.getPluginId())){
+                collectDependencies(depth, plugins.stream().filter(p -> p.getId().equals(it.getPluginId())).findFirst().get());
+            }
+        });
     }
 
 }
